@@ -1,0 +1,58 @@
+DROP DATABASE mubeaDataBase;
+CREATE DATABASE mubeaDataBase;
+SHOW DATABASES;
+USE MubeaDataBase;
+ 
+ 
+CREATE TABLE IF NOT EXISTS userMubea (
+ID_User int AUTO_INCREMENT,
+MA_Nummer VARCHAR(100),
+Vorname varchar(100),
+Nachname VARCHAR(100),
+Passwort_User VARCHAR(100),
+IstChef VARCHAR(100),
+IstUnterhalt VARCHAR(100),
+PRIMARY KEY (ID_User)
+);
+ 
+ 
+SHOW TABLES;
+ 
+INSERT INTO userMubea
+(MA_Nummer, Vorname, Nachname, Passwort_User, IstChef, istUnterhalt)
+VALUES ('0001','Admin','Administrator','123','Admin','Admin'),('70220','Hans','Meier','abcd','istChef', 'istU'),
+('70223','Max','Mustermann','1234','keinChef','istU'),('70225','Güööääuendogan','MééàèŕčaeTurc','1','keinChef','keinU');
+ 
+ 
+DESCRIBE userMubea;
+ 
+SELECT * FROM userMubea;
+
+
+
+
+
+DROP TABLE stoerungMubea;
+
+CREATE TABLE IF NOT EXISTS stoerungMubea (
+ID_S int AUTO_INCREMENT, 
+Abteilung VARCHAR(100),
+Anlage VARCHAR(100),
+AnlageGruppe VARCHAR(100),
+Stoerung VARCHAR(100),
+ZSt int, 
+VnameG VARCHAR(100),
+NnameG VARCHAR(100),
+DatumG VARCHAR(100),
+UhrzeitG VARCHAR(100),
+VnameB VARCHAR(100),
+NnameB VARCHAR(100),
+DatumB VARCHAR(100),
+UhrzeitB VARCHAR(100),
+StOG VARCHAR(100)  DEFAULT 'open',
+PRIMARY KEY (ID_S)
+);
+
+SHOW TABLES;
+
+DESCRIBE stoerungMubea;
